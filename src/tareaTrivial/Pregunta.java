@@ -17,6 +17,8 @@ public class Pregunta {
 	 */
 	private int resposta;
 	
+	private boolean preguntaRespondida;
+	
 	/**
 	 * Constructor da clase Pregunta. Inicializa os atributos
 	 * @param enunciado enunciado da pregunta.
@@ -27,6 +29,7 @@ public class Pregunta {
 		this.enunciado = enunciado;
 		this.opcion = opcion;
 		this.resposta = resposta;
+		this.preguntaRespondida = false;
 	}
 	
 	//GETTERS
@@ -35,7 +38,7 @@ public class Pregunta {
 	 * @return String pregunta
 	 */
 	public String getEnunciado () {
-		return this.enunciado;
+		return this.enunciado + "\n";
 	}
 	
 	/**
@@ -75,6 +78,13 @@ public class Pregunta {
 	public int getResposta () {
 		return this.resposta;
 	}
+	/**
+	 * Retorna un valor booleano que indica se a pregunta foi respondida ou non
+	 * @return true se a pregunta foi respondida, false se non o foi
+	 */
+	public boolean getPreguntaRespondida () {
+		return this.preguntaRespondida;
+	}
 	
 	//SETTERS	
 	public void setEnunciado (String enunciado) {
@@ -89,6 +99,10 @@ public class Pregunta {
 		this.resposta = resposta;
 	}
 	
+	public void setPreguntaRespondida (boolean preguntaRespondida) {
+		this.preguntaRespondida = preguntaRespondida;
+	}
+	//MÉTODOS DA CLASE
 	/**
 	 * Determina se a resposta é ou non é correcta
 	 * @param resposta
