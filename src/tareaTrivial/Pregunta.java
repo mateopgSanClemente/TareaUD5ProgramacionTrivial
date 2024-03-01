@@ -45,11 +45,13 @@ public class Pregunta {
 	 */
 	public String getOpcions (int indice) {
 		//Validar o índice
-		if (indice >= 0 && indice < this.opcion.length) {
-			return this.opcion[indice];
-		} else {
-			throw new IndexOutOfBoundsException ("Erro: O índice " + indice + " non é válido.");
+		try {
+			if (indice >= 0 && indice < this.opcion.length)
+				return this.opcion[indice];
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("Erro: " + e.getMessage() + "\nO índice " + indice + " está fora do rango do array. O índice introducido como argumento debe atoparse entre 0 e " + opcion.length + ".");
 		}
+		return "O índice introducido non é válido";
 	}
 	
 	/**
